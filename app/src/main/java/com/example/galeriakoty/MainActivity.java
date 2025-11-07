@@ -58,7 +58,16 @@ public class MainActivity extends AppCompatActivity {
                 imageView.setImageResource(images[aktualnyindex]);
             }
         });
-
+        buttonPrev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                aktualnyindex--;
+                if (aktualnyindex < 0) {
+                    aktualnyindex = images.length - 1;
+                }
+                imageView.setImageResource(images[aktualnyindex]);
+            }
+        });
 
 
     }
