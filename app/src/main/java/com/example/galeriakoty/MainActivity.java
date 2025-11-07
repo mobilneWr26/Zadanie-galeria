@@ -68,6 +68,36 @@ public class MainActivity extends AppCompatActivity {
                 imageView.setImageResource(images[aktualnyindex]);
             }
         });
+        editTextNumber.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(android.text.Editable editable) {
+                String text = editable.toString();
+                if (!text.isEmpty()) {
+                    try {
+                        int nr = Integer.parseInt(text);
+                        if (nr >= 1 && nr <= images.length) {
+                            aktualnyindex = nr - 1;
+                            imageView.setImageResource(images[aktualnyindex]);
+                        }
+                    }
+
+                    catch (NumberFormatException e) {
+
+                    }
+                }
+            }
+        });
+
 
 
     }
