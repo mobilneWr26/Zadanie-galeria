@@ -100,5 +100,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        switchColor.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                mainLayout.setBackgroundColor(android.graphics.Color.parseColor("#1565c0"));
+            } else {
+                mainLayout.setBackgroundColor(android.graphics.Color.parseColor("#00796B"));
+            }
+        });
+
+
     }
 }
