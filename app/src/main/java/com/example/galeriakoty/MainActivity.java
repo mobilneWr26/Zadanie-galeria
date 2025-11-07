@@ -19,7 +19,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private ImageView imageView;
     private Button buttonPrev, buttonNext;
     private EditText editTextNumber;
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.kot3,
             R.drawable.kot4
     };
-
     private int aktualnyindex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         editTextNumber = findViewById(R.id.editTextText);
         switchColor = findViewById(R.id.switch1);
         mainLayout = findViewById(R.id.main);
-
 
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,9 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
         switchColor.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 mainLayout.setBackgroundColor(android.graphics.Color.parseColor("#1565c0"));
