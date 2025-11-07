@@ -20,6 +20,19 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
 
+    private ImageView imageView;
+    private Button buttonPrev, buttonNext;
+    private EditText editTextNumber;
+    private Switch switchColor;
+    private LinearLayout mainLayout;
+
+    private int[] images = {
+            R.drawable.kot1,
+            R.drawable.kot2,
+            R.drawable.kot3,
+            R.drawable.kot4
+    };
+
     private int aktualnyindex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +40,26 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        imageView = findViewById(R.id.imageView_galeria_kotow);
+        buttonPrev = findViewById(R.id.button_nastepne_zdj);
+        buttonNext = findViewById(R.id.button_poprzednie_zdj);
+        editTextNumber = findViewById(R.id.editTextText);
+        switchColor = findViewById(R.id.switch1);
+        mainLayout = findViewById(R.id.main);
 
-        }
+
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                aktualnyindex++;
+                if (aktualnyindex >= images.length) {
+                    aktualnyindex = 0;
+                }
+                imageView.setImageResource(images[aktualnyindex]);
+            }
+        });
+
+
+
     }
+}
